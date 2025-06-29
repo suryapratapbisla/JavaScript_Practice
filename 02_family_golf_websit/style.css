@@ -1,0 +1,633 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: 'montserrat';
+}
+
+html,body {
+    height: 100%;
+    width: 100%;
+    
+}
+
+#nav {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 60px;
+    padding: 0 150px;
+    height: 140px;
+    width: 100%;
+    z-index: 99;
+}
+
+#nav img {
+    height: 75px;
+}
+
+#nav h4 {
+    
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+#curser{
+    position: fixed;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #95c11e;
+    z-index: 99;
+    pointer-events: none;
+    transition: scale 0.1s linear;
+}
+
+#curser_blur{
+    position: fixed;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    filter: blur(30px);
+    z-index: 9;
+    background-color: #96c11e3f;
+    /* transition: all 0.5s linear; */
+}
+
+video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+    position: fixed;
+}
+
+#main {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+#page1 {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+}
+
+#page1 h1 {
+    font-size: 140px;
+    font-weight: 900;
+    position: relative;
+}
+
+#page1 h1::before{
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    color: #000;
+    top: -6px;
+    left: -6px;
+    -webkit-text-stroke: 3px #95c11e;
+    z-index: -1;
+}
+
+#page1 h2 {
+    margin-top: 10px;
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+#page1 p {
+    font-size: 15px;
+    font-weight: 600;
+    width: 40%;
+}
+
+
+#arrow {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    bottom: 0;
+    left: -55px;
+    border: 3px solid #95c11e;
+    z-index: 10;
+    transition: all ease 0.5s;
+}
+
+#arrowContainer {
+    position: relative;
+    height: 45px;
+    width: 45px;
+    overflow: hidden;
+}
+
+#arrow i {
+    position: absolute;
+    left: 0;
+    font-size: 45px;
+    font-weight: 100;
+}
+
+
+
+#arrow i:nth-child(1){
+    top: -45px;
+}
+
+
+#arrow:hover {
+    scale: 0.5;
+    background-color: #95c11e;
+}
+
+#arrow:hover #arrowContainer {
+    transform: scale(2);
+}
+
+#arrow:hover i {
+    animation-name: arrow;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+}
+
+@keyframes arrow {
+    from {
+        transform: translateY(0);
+    }
+    to
+    {
+        transform: translateY(45px);
+    }
+}
+
+
+#page2 {
+    min-height: 100vh;
+    width: 100%;
+    z-index: 10;
+}
+
+#scroller {
+    
+    white-space: nowrap;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+#scroller::-webkit-scrollbar {
+    display: none;
+}
+
+#scroller_in {
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#scroller h4 {
+    display: inline-block;
+    font-size: 120px;
+    font-weight: 900;
+    font-family: gilroy;
+    margin-right: 10px;
+    color: #000;
+    -webkit-text-stroke: 2px #ffffff;
+    transition: all linear 0.5s;
+}
+
+#scroller h4:hover {
+    color: #95c11e;
+}
+
+@keyframes scroll {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-50%);
+    }
+}
+
+
+
+#about_us {
+    height: 40vh;
+    width: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#about_us img {
+    height: 200px;
+    width: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+    position: relative;
+    z-index: 10;
+}
+
+#about_us_in {
+    width: 40%;
+    text-align: center;
+}
+
+#about_us_in h3 {
+    font-size: 50px;
+    font-weight: 900;
+}
+
+
+#about_us_in p{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    text-align: center;
+    
+}
+
+#about_us_in p:nth-child(2){
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+#about_us_in p:nth-child(3){
+    white-space: nowrap;
+}
+
+
+#card_container{
+    position: relative;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    z-index: 10;
+}
+
+#side_design {
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    top: -30px;
+    left: 150px;
+    z-index: -1;
+}
+
+.card {
+    
+    height: 80%;
+    width: 25%;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all ease 0.6s;
+}
+
+#card1{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+#card2{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4-1024x1024.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+#card3{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+
+#overlay {
+    height: 100%;
+    width: 100%;
+    background-color: #95c11e;
+    padding: 20px;
+    opacity: 0;
+    transition: all ease 0.6s;
+}
+
+
+#overlay h4 {
+    padding-top: 120px;
+    font-size: 40px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+}
+
+#overlay p {
+    color: #000;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+.card:hover {
+    transform: rotate3d(1,1,0,20deg);
+}
+
+.card:hover #overlay {
+    opacity: 1;
+}
+
+#green_div {
+    position: relative;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to top right, #95c11e 60%, #119f3a 100%);
+    height: 30vh;
+    width: 100%;
+    z-index: 10;
+}
+
+#green_div img {
+    height: 100%;
+    width: 10%;
+    object-fit: cover;
+}
+
+#green_div img:nth-child(1) {
+    transform: scaleX(-1);
+}
+
+#green_div h4 {
+    font-size: 30px;
+    color: #000;
+    width: 50%;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 900;
+}
+
+
+#page3 {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page3>p {
+    width: 55%;
+    font-size: 35px;
+    font-weight: 800;
+    text-align: center;
+}
+
+#page3>img {
+    position: absolute;
+    height: 60px;
+    width: 60px;
+}
+
+#colun1 {
+    top: 30%;
+    left: 15%;
+}
+
+#colun2 {
+    bottom: 30%;
+    right: 15%;
+}
+
+#page4 {
+    position: relative;
+    height: 30vh;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+#elem {
+    position: relative;
+    width: 27%;
+    height: 60%;
+    overflow: hidden;
+    border-radius: 20px;
+    z-index: 10;
+}
+
+#elem h2 {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #95c11e;
+    color: #000;
+    font-size: 40px;
+    font-family: gilroy;
+    transition: all ease 0.5s;
+}
+
+#elem:hover h2 {
+    background: transparent;
+    color: #fff;
+}
+
+#elem img {
+    transform: translateY(-50px);
+    width: 100%;
+    object-fit: cover;
+    scale: 1.1;
+    transition: all ease 0.5s;
+    position: absolute;
+    z-index: -1;
+}
+
+#elem:hover img {
+    scale: 1;
+}
+
+#page4 h1 {
+    position: absolute;
+    font-family: gilroy;
+    font-size: 112px;
+    color: #000;
+    /* z-index: 11; */
+    top: -30px;
+    -webkit-text-stroke: 2px #fff;
+}
+
+#elem:hover h1 {
+    -webkit-text-stroke: 1px #95c11e;
+}
+
+
+#footer {
+    height: 40vh;
+    width: 100%;
+    background: linear-gradient(to top right,#95c11e 50%, #119f3a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    z-index: 10;
+}
+
+#footer img {
+    position: absolute;
+    height: 100%;
+    width: 25%;
+    left: 0;
+    top: 0;
+}
+
+.footer_block {
+    width: 22%;
+    height: 90%;
+    position: relative;
+}
+
+#logos {
+    position: relative;
+}
+
+#logo img {
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    left: 25%;
+    top: 20%;
+    transition: all ease 0.5s;
+}
+
+#logo img:hover {
+    scale: 0.9;
+}
+
+#icons {
+    position: absolute;
+    display: flex;
+    gap: 20px;
+    top: 70%;
+    left: 25%;
+
+}
+
+#icons i {
+    font-size: 35px;
+    transition: all ease 0.5s;
+    color: #000;
+}
+
+#icons i:hover {
+    color: #fff;
+}
+
+#f1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+}
+
+/* It defineds the where should they start so width automaticly get defiend as much the that elements need same works as 'width: fit-content' in this case. */
+
+#f1 p {
+    /* width: fit-content; */
+    color: #000;
+    font-size: 32px;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 45px;
+    transition: color ease 0.5s;
+}
+
+#f1 p:nth-child(1) {
+    margin-top: 20%;
+}
+
+#f1 p:hover {
+    color: #fff;
+}
+
+
+#f2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+}
+
+
+#f2 p {
+    color: #000;
+    font-size: 32px;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 45px;
+    transition: color ease 0.5s;
+}
+
+#f2 p:nth-child(1) {
+    margin-top: 20%;
+}
+
+#f2 p:hover {
+    color: #fff;
+}
+
+
+#f3 p {
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+#f3 a {
+    text-decoration: none;
+    color: #000;
+    font-size: 19px;
+    font-weight: 700;
+    transition: color ease 0.5s;
+
+}
+
+#f3 a:hover {
+    color: #fff;
+}
+
+#f3 p:nth-child(1) {
+    margin-top: 20%;
+}
+
+
+#f3 p:nth-child(2) {
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: 800;
+    transition: color ease 0.5s;
+}
+
+#f3 p:nth-child(2):hover {
+    color: #fff;
+}
