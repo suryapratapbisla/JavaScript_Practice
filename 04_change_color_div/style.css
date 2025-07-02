@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+html,body {
+    background-color: #fff;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#center {
+    height: 200px;
+    width: 400px;
+    border: 1px solid #000;
+    transform: translate(-50% -50%);
+    background-color: #fff;
+}
+
